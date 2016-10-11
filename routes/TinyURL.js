@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var URLDao = require("../DAOs/URLDao");
-var seqDao = require("../DAOS/SeqDao");
+var seqDao = require("../DAOs/SeqDao");
 
 //given a long URL, return a shortened URL
 router.get("/:url*", function (req, res, next) {
