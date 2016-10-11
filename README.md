@@ -10,7 +10,7 @@ User Stories:
 
 Example creation usage:</h2>
 
-http://www.yourhostname.com/new/http://www.google.com
+https://lit-peak-83363.herokuapp.com/new/http://www.google.com
 
 
 
@@ -18,9 +18,7 @@ Example creation output:
 {"original_url": http://www.google.com, "short_url": "ABEEEE" } 
 
 Usage:
- http://yourhostname.com/ABEEEE
+https://lit-peak-83363.herokuapp.com/ABEEEE
 
 Will redirect to:
  http://www.google.com
-
- testingsfafsf
