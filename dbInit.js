@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 
 // Build the connection string 
 var dbURI = process.env.MONGODB_URI || 'mongodb://0.0.0.0:27017/URL';
+console.log("The dbURI: "+dbURI);
 
 // Create the database connection 
 mongoose.connect(dbURI);
