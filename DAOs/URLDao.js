@@ -1,17 +1,15 @@
 var URLsModel = require("../models/URLs.js");
 
 exports.createTinyURL = function (fullURL, shortURL, callback) {
-
-    var shortToFull = new URLsModel({ "shortURL": shortURL, "fullURL": fullURL });
-
-    shortToFull.save(function (err) {
+    var query = { shortURL: shortURL };
+    var options = { upsert: true };
+    URLsModel.findOneAndUpdate(query, { $set: { "fullURL": fullURL } }, options, function (err, document) {
         if (err) {
             callback(err);
         } else {
             callback(null);
         }
-    }
-    );
+    });
 };
 
 exports.getFullURL = function (shortURL, callback) {

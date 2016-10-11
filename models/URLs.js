@@ -6,8 +6,7 @@ var Schema = mongoose.Schema;
 var URLSchema = new Schema({
     shortURL: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     fullURL: {
         type: String,

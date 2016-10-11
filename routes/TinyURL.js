@@ -10,7 +10,7 @@ router.get("/:url*", function (req, res, next) {
          res.send(JSON.stringify({ error: "This url is invalid" }));
         return;
     } else {
-        url = req.params.url + req.params[0] + ".com";
+        url = req.params.url + req.params[0];
     }
 
     seqDao.getSeqNum(function (err, seqNumber) {
@@ -42,10 +42,9 @@ function isURLValid(params) {
     if (!params || !params.url || params.length == 0) {
         return false;
     }
-    var url = params.url + params[0] + ".com";
+    var url = params.url + params[0];
     return /http:\/\/www.[a-z]*.com/.test(url)
-        || /https:\/\/www.[a-z]*.com/.test(url)
-        || /www.[a-z]*.com/.test(url);
+        || /https:\/\/www.[a-z]*.com/.test(url);
 };
 
 //convert a 6 digit base 26 number
