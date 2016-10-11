@@ -12,14 +12,20 @@ exports.getSeqNum = function (callback) {
         }
         if (seqNumber) {
             SequencesModel.update({ _id: seqNumber._id }, { $set: { seq: seqNumber.seq + 1 } }).exec();
-            callback(null,seqNumber);
+            callback(null, seqNumber);
         } else {
-            console.log("could not find sequences table");
-            var err = new Error();
-            err.status = 404;
-            callback(err);
-        }
 
+            var seqNumber = new SequencesModel({ seq: 0 });
+            seqNumber.save(function (err) {
+                if (err) {
+                    var err = new Error();
+                    err.status = 404;
+                    callback(err);
+                    return;
+                }
+                callback(null, 0);
+            });
+        }
     }
     );
 
