@@ -15,10 +15,10 @@ https://lit-peak-83363.herokuapp.com/new/http://www.google.com
 
 
 Example creation output:
-{"original_url": http://www.google.com, "short_url": "ABEEEE" } 
+{"original_url": http://www.google.com, "short_url": "KAAAAA" } 
 
 Usage:
-https://lit-peak-83363.herokuapp.com/ABEEEE
+https://lit-peak-83363.herokuapp.com/KAAAAA
 
 Will redirect to:
  http://www.google.com
