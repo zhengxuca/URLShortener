@@ -5,6 +5,7 @@ exports.createTinyURL = function (fullURL, shortURL, callback) {
     var options = { upsert: true };
     URLsModel.findOneAndUpdate(query, { $set: { "fullURL": fullURL } }, options, function (err, document) {
         if (err) {
+            console.log("could not update urls collection");
             callback(err);
         } else {
             callback(null);
