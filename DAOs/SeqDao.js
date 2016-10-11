@@ -12,10 +12,10 @@ exports.getSeqNum = function (callback) {
         }
         if (seqNumber) {
             SequencesModel.update({ _id: seqNumber._id }, { $set: { seq: seqNumber.seq + 1 } }).exec();
-            callback(null, seqNumber);
+            callback(null, seqNumber.seq);
         } else {
 
-            var seqNumber = new SequencesModel({ seq: 0 });
+            var seqNumber = new SequencesModel({ seq: 1 });
             seqNumber.save(function (err) {
                 if (err) {
                     var err = new Error();

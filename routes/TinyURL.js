@@ -20,7 +20,7 @@ router.get("/:url*", function (req, res, next) {
             return;
         }
 
-        var shortURL = getShortURL(seqNumber.seq);
+        var shortURL = getShortURL(seqNumber);
         URLDao.createTinyURL(url, shortURL, function (err) {
             if (err) {
                 console.log(err);
@@ -43,8 +43,8 @@ function isURLValid(params) {
         return false;
     }
     var url = params.url + params[0];
-    return /http:\/\/www.[a-z]*.com/.test(url)
-        || /https:\/\/www.[a-z]*.com/.test(url);
+    return /http:\/\/www.[a-z]*.*/.test(url)
+        || /https:\/\/www.[a-z]*.*/.test(url);
 };
 
 //convert a 6 digit base 26 number
