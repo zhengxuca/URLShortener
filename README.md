@@ -10,7 +10,7 @@ User Stories:
 
 Example creation usage:</h2>
 
- http://www.yourhostname.com/new/http://www.google.com
+http://www.yourhostname.com/new/http://www.google.com
 
 
 
